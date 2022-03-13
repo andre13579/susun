@@ -1,0 +1,35 @@
+{
+  "name": "susun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andre13579/susun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andre13579/susun/issues"
+  },
+  "homepage": "https://github.com/andre13579/susun#readme",
+  "devDependencies": {
+    "@snowpack/plugin-babel": "^2.1.7",
+    "@snowpack/plugin-dotenv": "^2.2.0",
+    "@snowpack/plugin-optimize": "^0.2.13",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "@snowpack/plugin-svelte": "^3.7.0",
+    "autoprefixer": "^10.4.2",
+    "axios": "^0.26.1",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.8",
+    "snowpack": "^3.8.8",
+    "svelte": "^3.46.4",
+    "svelte-spa-router": "^3.2.0"
+  }
+}
