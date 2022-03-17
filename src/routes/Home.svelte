@@ -18,9 +18,6 @@
 <script>
   import { onMount } from 'svelte';
 
-  /**
-   * 카카오 맵 호출
-   */
   function init() {
     const location = [37.47828789178454, 126.86053870442703]
     const extendLocation = [...location];
@@ -67,7 +64,7 @@
       Kakao
     }
   }
-  
+
   function clickEvent (map, location, KakaoShare) {
     const pageUrl = 'susun.pages.dev';
     const btnSearchStore = document.querySelector('#searchStore');
@@ -109,7 +106,7 @@
           objectType: 'feed',
           content: {
             title: "앙드레 옷 수선", // 보여질 제목
-            description: "옷 수선, 계절 옷 판매 등등..", // 보여질 설명
+            description: "여성 계절 옷 판매, 남녀 의류 수선ㆍ리폼", // 보여질 설명
             imageUrl: `https://${pageUrl}/assets/logo_andre.png`, // 콘텐츠 URL
             link: {
               mobileWebUrl: `https://${pageUrl}`,
@@ -122,7 +119,7 @@
       }
     })
   }
-  
+
   onMount(() => {
     const { map, marker, location, Kakao } = init();
 

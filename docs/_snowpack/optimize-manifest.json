@@ -8,10 +8,12 @@
         "/common.css"
       ],
       "js": [
-        "/_snowpack/pkg/common/index-81606468.js",
-        "/_snowpack/pkg/common/index-c43dd0dd.js",
+        "/_snowpack/pkg/common/index-3c443e78.js",
+        "/_snowpack/pkg/common/index-fce201c5.js",
         "/_snowpack/pkg/svelte-spa-router.js",
+        "/_snowpack/pkg/svelte.js",
         "/_snowpack/pkg/svelte/internal.js",
+        "//dapi.kakao.com/v2/maps/sdk.js?appkey=89b0a44e1f81d77a4103cc826a62c52f",
         "/dist/App.svelte.js",
         "/dist/components/Footer.svelte.js",
         "/dist/components/Header.svelte.js",
@@ -19,7 +21,9 @@
         "/dist/main.js",
         "/dist/routes/About.svelte.js",
         "/dist/routes/Home.svelte.js",
-        "/dist/routes/index.js"
+        "/dist/routes/index.js",
+        "/js/andre",
+        "https://developers.kakao.com/sdk/js/kakao.min.js"
       ]
     }
   },
