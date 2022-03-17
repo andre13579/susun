@@ -1,1 +1,1 @@
-<footer>Footer!</footer>
+<footer style="display:none">Footer!</footer>

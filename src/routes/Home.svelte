@@ -8,7 +8,7 @@
   </div>
 
   <div class="wrap_btn">
-    <button type="button" id="searchStore" class="btn_comm">가게 찾기</button>
+    <button type="button" id="searchStore" class="btn_comm">가게 위치 보기</button>
     <button type="button" id="shareTw" class="btn_comm">트위터로 공유하기</button>
     <button type="button" id="shareFb" class="btn_comm">페이스북으로 공유하기</button>
     <button type="button" id="shareKt" class="btn_comm">카카오톡으로 공유하기</button>
@@ -69,38 +69,37 @@
   }
   
   function clickEvent (map, location, KakaoShare) {
-    let btnSearchStore = document.querySelector('#searchStore');
-    let btnZoomIn = document.querySelector('#zoomIn');
-    let btnZoomOut = document.querySelector('#zoomOut');
-    let btnShareTw = document.querySelector('#shareTw');
-    let btnShareFb = document.querySelector('#shareFb');
-    let btnShareKt = document.querySelector('#shareKt');
+    const pageUrl = 'susun.pages.dev';
+    const btnSearchStore = document.querySelector('#searchStore');
+    const btnZoomIn = document.querySelector('#zoomIn');
+    const btnZoomOut = document.querySelector('#zoomOut');
+    const btnShareTw = document.querySelector('#shareTw');
+    const btnShareFb = document.querySelector('#shareFb');
+    const btnShareKt = document.querySelector('#shareKt');
 
     // 지도 센터 부드럽게 이동
     btnSearchStore.addEventListener('click', () => {
-      let moveLatLon = new kakao.maps.LatLng(...location);
+      const moveLatLon = new kakao.maps.LatLng(...location);
       map.panTo(moveLatLon);
     })
     // 지도 확대하기
     btnZoomIn.addEventListener('click', () => {
-      let level = map.getLevel();
+      const level = map.getLevel();
       map.setLevel(level - 1);
     })
     // 지도 축소하기
     btnZoomOut.addEventListener('click', () => {
-      let level = map.getLevel();
+      const level = map.getLevel();
       map.setLevel(level + 1);
     })
     // 트위터로 공유하기
     btnShareTw.addEventListener('click', () => {
       const sendText = '앙드레 옷 수선';
-      const sendUrl = 'andre13579.github.io/susun';
-      window.open(`https://twitter.com/intent/tweet?text=${sendText}&url=${sendUrl}`)
+      window.open(`https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`)
     })
     // 페이스북 공유하기
     btnShareFb.addEventListener('click', () => {
-      const sendUrl = 'andre13579.github.io/susun';
-      window.open(`http://www.facebook.com/sharer/sharer.php?u=${sendUrl}`);
+      window.open(`http://www.facebook.com/sharer/sharer.php?u=${pageUrl}`);
     })
     // 카카오톡 공유하기
     btnShareKt.addEventListener('click', async () => {
@@ -111,10 +110,10 @@
           content: {
             title: "앙드레 옷 수선", // 보여질 제목
             description: "옷 수선, 계절 옷 판매 등등..", // 보여질 설명
-            imageUrl: "./assets/logo_andre.png", // 콘텐츠 URL
+            imageUrl: `https://${pageUrl}/assets/logo_andre.png`, // 콘텐츠 URL
             link: {
-              mobileWebUrl: "https://andre13579.github.io/susun",
-              webUrl: "https://andre13579.github.io/susun"
+              mobileWebUrl: `https://${pageUrl}`,
+              webUrl: `https://${pageUrl}`
             }
           }
         });
@@ -132,39 +131,3 @@
   });
   
 </script>
-
-<style lang="scss">
-  .map{position:relative}
-  .btn_comm{
-    padding:7px 20px 5px;border-radius:2px;font-weight:700;font-size:14px;line-height:20px;background-color:#ffcd00;
-    &:active{
-      background-color:#ff661d;
-    }
-  }
-  .btn_map_icon{
-    display:flex;flex-direction:column;justify-content:center;align-items:center;position:absolute;bottom:10px;right:10px;z-index:10;font-size:0;line-height:0;
-    button{
-      display:flex;justify-content:center;align-items:center;
-      position:relative;width:25px;height:25px;border:1px solid #c2c2c2;border-radius:2px;color:#343434;font-size:0;background:#fff;
-      &:active{
-        background-color: #f5f5f5;
-      }
-      &:before, &:after{
-        width:10px;height:2px;background:#565656;
-        position:absolute;
-        left:50%;top:50%;
-        transform:translate(-50%, -50%);
-        content: '';
-      }
-      &:after{
-        transform:translate(-50%, -50%) rotate(90deg);
-      }
-    }
-    button + button{
-      margin-top:5px;
-      &:after{
-        content:normal;
-      }
-    }
-  }
-</style>
