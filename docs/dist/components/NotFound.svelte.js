@@ -1,0 +1,2 @@
+import{SvelteComponent as s,attr as a,detach as c,element as i,init as l,insert as p,noop as n,safe_not_equal as u}from"../../_snowpack/pkg/svelte/internal.js";function d(r){let t;return{c(){t=i("div"),t.innerHTML=`<h2>Page Not Found</h2> 
+  <p class="txt_desc">error status 404</p>`,a(t,"class","wrap_error")},m(e,o){p(e,t,o)},p:n,i:n,o:n,d(e){e&&c(t)}}}class f extends s{constructor(t){super();l(this,t,null,d,u,{})}}export default f;

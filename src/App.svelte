@@ -1,5 +1,12 @@
-<div class="app">
-  <h1>App !</h1>
-</div>
+<script>
+  import Router from 'svelte-spa-router';
+  import routes from '~/routes';
+  import Header from '~/components/Header.svelte';
+  import Footer from '~/components/Footer.svelte';
+</script>
 
-<style lang="scss"></style>
+<div class="wrap_andre">
+  <Header />
+  <Router {routes} />
+  <Footer />
+</div>

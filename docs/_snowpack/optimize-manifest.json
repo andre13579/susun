@@ -8,9 +8,18 @@
         "/common.css"
       ],
       "js": [
+        "/_snowpack/pkg/common/index-81606468.js",
+        "/_snowpack/pkg/common/index-c43dd0dd.js",
+        "/_snowpack/pkg/svelte-spa-router.js",
         "/_snowpack/pkg/svelte/internal.js",
         "/dist/App.svelte.js",
-        "/dist/main.js"
+        "/dist/components/Footer.svelte.js",
+        "/dist/components/Header.svelte.js",
+        "/dist/components/NotFound.svelte.js",
+        "/dist/main.js",
+        "/dist/routes/About.svelte.js",
+        "/dist/routes/Home.svelte.js",
+        "/dist/routes/index.js"
       ]
     }
   },
