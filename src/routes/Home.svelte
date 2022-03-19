@@ -26,7 +26,7 @@
 
 <script>
 import { onMount } from 'svelte'
-import { init, clickEvent } from '../js/andre'
+import { init, clickEvent } from '~/js/andre'
 
 onMount(() => {
   const { map, marker, location, Kakao } = init();
