@@ -51,12 +51,16 @@ header .inner_head{max-width:1100px;margin:0 auto;padding:0 20px;background:rgba
 
 /* 공통 */
 .wrap_btn{display:grid;grid-gap:10px;grid-template-columns:repeat(4, 1fr);margin-top:15px;font-size:0;line-height:0;word-break:keep-all}
-.tit_andre{padding:10px 0;font-size:20px;line-height:1.5;}
+.tit_andre + .wrap_btn{margin-top:0}
+.tit_andre{padding:15px 0 10px;font-size:20px;line-height:1.5;}
 
 /* 홈 */
 .map_andre{position:relative;width:100%;height:400px}
-.btn_comm{min-height:40px;padding:7px 20px 5px;border-radius:2px;font-weight:700;font-size:14px;line-height:20px;background-color:#ffcd00}
+.btn_comm{position:relative;min-height:40px;padding:7px 20px 5px;border-radius:2px;font-weight:700;font-size:14px;line-height:20px;background-color:#ffcd00}
 .btn_comm:active{background-color:#ff661d}
+#shareKs a{overflow:hidden;position:absolute;top:0;left:0;right:0;bottom:0;font-size:0;line-height:0;opacity:0.001;text-indent:-9999px}
+.btn_location{margin:10px 0;padding:10px 10px 10px 0;font-weight:bold;text-decoration:underline}
+.btn_location .img_location{display:inline-block;margin:2px 0 0 4px;width:10px;vertical-align:top}
 .btn_map_icon{display:flex;flex-direction:column;justify-content:center;align-items:center;position:absolute;bottom:10px;right:10px;z-index:10;font-size:0;line-height:0}
 .btn_map_icon button{
   display:flex;justify-content:center;align-items:center;

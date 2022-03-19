@@ -1,7 +1,6 @@
 "use strct";
 
 window.addEventListener('load', function() {
-  console.log('load');
   const { map, marker, location, Kakao } = init();
 
   clickEvent(map, location, Kakao); // 클릭 이벤트
@@ -46,6 +45,7 @@ function init() {
 
   // 카카오톡 공유하기 버튼 초기화
   Kakao.init('e73e44e9981069fd55d94fdeca2c6f37');
+  
 
   return {
     location,
@@ -55,7 +55,7 @@ function init() {
   }
 }
 
-function clickEvent (map, location, KakaoShare) {
+function clickEvent (map, location, Kakao) {
   const pageUrl = 'susun.pages.dev';
   const btnSearchStore = document.querySelector('#searchStore');
   const btnZoomIn = document.querySelector('#zoomIn');
@@ -63,6 +63,7 @@ function clickEvent (map, location, KakaoShare) {
   const btnShareTw = document.querySelector('#shareTw');
   const btnShareFb = document.querySelector('#shareFb');
   const btnShareKt = document.querySelector('#shareKt');
+  const btnShareKs = document.querySelector('#shareKs');
 
   // 지도 센터 부드럽게 이동
   btnSearchStore.addEventListener('click', () => {
@@ -88,33 +89,19 @@ function clickEvent (map, location, KakaoShare) {
   btnShareFb.addEventListener('click', () => {
     window.open(`http://www.facebook.com/sharer/sharer.php?u=${pageUrl}`);
   })
+  // 카카오스토리 공유하기
+  Kakao.Story.createShareButton({
+    container: '#shareKs',
+    url: 'https://susun.pages.dev',
+  });   
+  
   // 카카오톡 공유하기
-  btnShareKt.addEventListener('click', async () => {
-    try {
-      KakaoShare.Link.sendCustom({
-        templateId: 73227,
-        templateArgs: {
-          'title': '앙드레 옷 수선',
-          'description': '여성 계절 옷 판매, 남녀 의류 수선ㆍ리폼'
-        }
-      });
-      
-      // KakaoShare.Link.sendDefault({
-      //   // container: '#shareKt', // 카카오공유버튼ID
-      //   objectType: 'feed',
-      //   content: {
-      //     title: "앙드레 옷 수선", // 보여질 제목
-      //     description: "여성 계절 옷 판매, 남녀 의류 수선ㆍ리폼", // 보여질 설명
-      //     imageUrl: `https://${pageUrl}/assets/logo_andre.png`, // 콘텐츠 URL
-      //     link: {
-      //       mobileWebUrl: `https://${pageUrl}`,
-      //       webUrl: `https://${pageUrl}`
-      //     }
-      //   }
-      // });
-      
-    } catch (error) {
-      console.log(error.message);
+  Kakao.Link.createCustomButton({
+    container: '#shareKt',
+    templateId: 73227,
+    templateArgs: {
+      'title': '앙드레 옷 수선',
+      'description': '여성 계절 옷 판매, 남녀 의류 수선ㆍ리폼'
     }
-  })
+  });
 }
