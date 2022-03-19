@@ -1,1 +1,0 @@
-import{SvelteComponent as s,detach as l,element as a,init as i,insert as c,noop as o,safe_not_equal as p,set_style as f}from"../../_snowpack/pkg/svelte/internal.js";function u(n){let e;return{c(){e=a("footer"),e.textContent="Footer!",f(e,"display","none")},m(t,r){c(t,e,r)},p:o,i:o,o,d(t){t&&l(e)}}}class m extends s{constructor(e){super();i(this,e,null,u,p,{})}}export default m;
