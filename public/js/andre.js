@@ -1,6 +1,6 @@
 "use strct";
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
   const { map, marker, location, Kakao } = init();
 
   clickEvent(map, location, Kakao); // 클릭 이벤트
@@ -92,8 +92,8 @@ function clickEvent (map, location, Kakao) {
   btnShareKs.addEventListener('click', () => {
     Kakao.Story.share({
       // container: '#shareKs',
-      url: 'https://www.daum.net',
-      text: '카카오스토리로 공유 합니다.'
+      url: 'https://susun.pages.dev',
+      text: '앙드레 옷 수선 - 여성 계절 옷 판매, 남녀 의류 수선ㆍ리폼'
     });
   })
   
