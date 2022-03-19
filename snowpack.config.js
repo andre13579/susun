@@ -3,9 +3,9 @@ module.exports = {
     public: '/',
     src: '/dist'
   },
-  buildOptions: {
-    out: './docs'
-  },
+  // buildOptions: {
+  //   out: './docs'
+  // },
   plugins: [
     '@snowpack/plugin-svelte',
     '@snowpack/plugin-sass',
