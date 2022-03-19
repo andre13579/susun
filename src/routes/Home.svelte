@@ -1,5 +1,8 @@
 <main>
   <h2 class="tit_andre">찾아오시는 길</h2>
+  <p class="txt_desc">
+    <span class="emph_line7">7호선 광명사거리역</span> 10번 출구 약 2분 거리
+  </p>
   <div id="map" class="map_andre">
   <div class="btn_map_icon">
     <button type="button" id="zoomIn" title="지도 확대하기">+</button>
