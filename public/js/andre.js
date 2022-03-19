@@ -1,6 +1,6 @@
 "use strct";
 
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
   const { map, marker, location, Kakao } = init();
 
   clickEvent(map, location, Kakao); // 클릭 이벤트
@@ -46,7 +46,6 @@ function init() {
   // 카카오톡 공유하기 버튼 초기화
   Kakao.init('e73e44e9981069fd55d94fdeca2c6f37');
   
-
   return {
     location,
     map,
@@ -83,25 +82,24 @@ function clickEvent (map, location, Kakao) {
   // 트위터로 공유하기
   btnShareTw.addEventListener('click', () => {
     const sendText = '앙드레 옷 수선';
-    window.open(`https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`)
+    window.open(`https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`);
   })
   // 페이스북 공유하기
   btnShareFb.addEventListener('click', () => {
     window.open(`http://www.facebook.com/sharer/sharer.php?u=${pageUrl}`);
   })
   // 카카오스토리 공유하기
-  Kakao.Story.createShareButton({
-    container: '#shareKs',
-    url: 'https://susun.pages.dev',
-  });   
+  btnShareKs.addEventListener('click', () => {
+    Kakao.Story.share({
+      // container: '#shareKs',
+      url: 'https://www.daum.net',
+      text: '카카오스토리로 공유 합니다.'
+    });
+  })
   
   // 카카오톡 공유하기
   Kakao.Link.createCustomButton({
     container: '#shareKt',
-    templateId: 73227,
-    templateArgs: {
-      'title': '앙드레 옷 수선',
-      'description': '여성 계절 옷 판매, 남녀 의류 수선ㆍ리폼'
-    }
+    templateId: 73227
   });
 }
